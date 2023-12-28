@@ -190,3 +190,32 @@ const BinaryTree = (array) => {
     rebalance
   }
 }
+
+function randomArray () {
+  const array = []
+  for (let i = 0; i < Math.floor(Math.random() * 100); i++) {
+    array.push(Math.floor(Math.random() * 100))
+  }
+  return array
+}
+
+const tree = BinaryTree(randomArray())
+
+console.log(tree.isBalanced())
+
+console.log(tree.levelOrder())
+console.log(tree.preOrder())
+console.log(tree.postorder())
+console.log(tree.inorder())
+
+tree.insert(111)
+tree.insert(222)
+tree.insert(333)
+
+console.log(tree.isBalanced())
+tree.rebalance()
+console.log(tree.isBalanced())
+
+console.log(tree.preOrder())
+console.log(tree.postorder())
+console.log(tree.inorder())
